@@ -16,6 +16,7 @@
 
 package android.provider.settings.validators;
 
+import static android.provider.settings.validators.SettingsValidators.ANY_INTEGER_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.ANY_STRING_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.BOOLEAN_VALIDATOR;
 import static android.provider.settings.validators.SettingsValidators.COMPONENT_NAME_VALIDATOR;
@@ -237,5 +238,10 @@ public class SystemSettingsValidators {
         VALIDATORS.put(System.QS_LAYOUT_COLUMNS, NON_NEGATIVE_INTEGER_VALIDATOR);
         VALIDATORS.put(System.QS_TILE_LABEL_HIDE, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.DOZE_ON_CHARGE, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.STATUS_BAR_LOGO, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(System.STATUS_BAR_LOGO_COLOR, ANY_INTEGER_VALIDATOR);
+        VALIDATORS.put(System.STATUS_BAR_LOGO_POSITION, ANY_INTEGER_VALIDATOR);
+        VALIDATORS.put(System.STATUS_BAR_LOGO_STYLE, ANY_INTEGER_VALIDATOR);
+        VALIDATORS.put(System.STATUS_BAR_LOGO_COLOR_ACCENT, BOOLEAN_VALIDATOR);
     }
 }
