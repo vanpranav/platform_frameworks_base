@@ -52,6 +52,7 @@ import com.android.systemui.qs.tiles.QuickAccessWalletTile;
 import com.android.systemui.qs.tiles.ReduceBrightColorsTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenRecordTile;
+import com.android.systemui.qs.tiles.SoundSearchTile;
 import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.UserTile;
@@ -102,6 +103,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<AmbientDisplayTile> mAmbientDisplayTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
     private final Provider<AODTile> mAODTileProvider;
+    private final Provider<SoundSearchTile> mSoundSearchTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
     private final Provider<CustomTile.Builder> mCustomTileBuilderProvider;
@@ -142,7 +144,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<FPSInfoTile> fpsInfoTileProvider,
             Provider<AmbientDisplayTile> ambientDisplayTileProvider,
             Provider<CaffeineTile> caffeineTileProvider,
-            Provider<AODTile> aodTileProvider) {
+            Provider<AODTile> aodTileProvider,
+            Provider<SoundSearchTile> soundSearchTileProvider) {
         mQsHostLazy = qsHostLazy;
         mCustomTileBuilderProvider = customTileBuilderProvider;
 
@@ -179,6 +182,7 @@ public class QSFactoryImpl implements QSFactory {
         mAmbientDisplayTileProvider = ambientDisplayTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
         mAODTileProvider = aodTileProvider;
+        mSoundSearchTileProvider = soundSearchTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -257,6 +261,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mCaffeineTileProvider.get();
             case "aod":
                 return mAODTileProvider.get();
+            case "soundsearch":
+                return mSoundSearchTileProvider.get();
         }
 
         // Custom tiles
