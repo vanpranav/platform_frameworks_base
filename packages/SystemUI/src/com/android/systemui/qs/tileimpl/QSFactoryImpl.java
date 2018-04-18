@@ -28,6 +28,7 @@ import com.android.systemui.qs.external.CustomTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AlarmTile;
 import com.android.systemui.qs.tiles.AmbientDisplayTile;
+import com.android.systemui.qs.tiles.AODTile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CameraToggleTile;
@@ -100,6 +101,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<FPSInfoTile> mFPSInfoTileProvider;
     private final Provider<AmbientDisplayTile> mAmbientDisplayTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
+    private final Provider<AODTile> mAODTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
     private final Provider<CustomTile.Builder> mCustomTileBuilderProvider;
@@ -139,7 +141,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<DataSwitchTile> dataSwitchTileProvider,
             Provider<FPSInfoTile> fpsInfoTileProvider,
             Provider<AmbientDisplayTile> ambientDisplayTileProvider,
-            Provider<CaffeineTile> caffeineTileProvider) {
+            Provider<CaffeineTile> caffeineTileProvider,
+            Provider<AODTile> aodTileProvider) {
         mQsHostLazy = qsHostLazy;
         mCustomTileBuilderProvider = customTileBuilderProvider;
 
@@ -175,6 +178,7 @@ public class QSFactoryImpl implements QSFactory {
         mFPSInfoTileProvider = fpsInfoTileProvider;
         mAmbientDisplayTileProvider = ambientDisplayTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
+        mAODTileProvider = aodTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -251,6 +255,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mAmbientDisplayTileProvider.get();
             case "caffeine":
                 return mCaffeineTileProvider.get();
+            case "aod":
+                return mAODTileProvider.get();
         }
 
         // Custom tiles
