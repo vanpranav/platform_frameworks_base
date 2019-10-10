@@ -65,4 +65,7 @@
     <!-- SystemUI Restart -->
     <java-symbol type="string" name="systemui_restart_title" />
     <java-symbol type="string" name="systemui_restart_message" />
+
+    <!-- Ambient Pulse Light -->
+    <java-symbol type="integer" name="config_AmbientPulseLightColor" />
 </resources>
