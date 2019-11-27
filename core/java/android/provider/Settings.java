@@ -5831,6 +5831,12 @@ public final class Settings {
          * Whether Ambient Edge lights are activated
          * @hide
          */
+        public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
+        
+        /**
+         * Whether Ambient Edge lights are activated
+         * @hide
+         */
         @Readable
         public static final String AOD_NOTIFICATION_PULSE_ACTIVATED = "ambient_notification_light_activated";
 
