@@ -17,7 +17,7 @@
 -->
 
 <!-- Extends FrameLayout -->
-<com.android.systemui.evolution.NotificationLightsView
+<com.android.systemui.arcana.NotificationLightsView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:systemui="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
@@ -45,4 +45,4 @@
         android:layout_height="match_parent"
         android:src="@drawable/omni_light_pulse_left"/>
 
-</com.android.systemui.evolution.NotificationLightsView>
+</com.android.systemui.arcana.NotificationLightsView>
