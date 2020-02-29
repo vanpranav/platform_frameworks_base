@@ -70,7 +70,7 @@ public class DataSwitchTile extends QSTileImpl<BooleanState> {
     ) {
         super(host, backgroundLooper, mainHandler, falsingManager, metricsLogger,
                 statusBarStateController, activityStarter, qsLogger);
-        mLongClickIntent = new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
+        mLongClickIntent = new Intent(Settings.Panel.ACTION_MOBILE_DATA);
         mTileLabel = mContext.getString(R.string.qs_data_switch_label);
         mSubscriptionManager = SubscriptionManager.from(mContext);
         mTelephonyManager = TelephonyManager.from(mContext);
