@@ -5325,6 +5325,9 @@ public final class Settings {
          */
         public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
 
+        /** @hide */
+        public static final String BACK_GESTURE_HAPTIC = "back_gesture_haptic";
+
         /**
          * Whether or not to send device back to sleep if Camera button is released ("Peek")
          * 0 = 0ff, 1 = on
@@ -5515,6 +5518,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CAMERA_LAUNCH);
             PRIVATE_SETTINGS.add(TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK);
             PRIVATE_SETTINGS.add(HIGH_TOUCH_SENSITIVITY_ENABLE);
+            PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
         }
 
         /**
