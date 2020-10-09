@@ -5887,7 +5887,23 @@ public final class Settings {
          * @hide
          */
         public static final String PULSE_LIGHT_LAYOUT_STYLE = "pulse_light_layout_style";
-        
+
+        /**
+         * Whether to show material Dismiss All Button for notifications
+         * @hide
+         */
+        public static final String NOTIFICATION_MATERIAL_DISMISS = "notification_material_dismiss";
+
+        /**
+         * @hide
+         */
+        public static final String NOTIFICATION_MATERIAL_DISMISS_STYLE = "notification_material_dismiss_style";
+
+        /**
+         * @hide
+         */
+        public static final String NOTIFICATION_MATERIAL_DISMISS_BGSTYLE = "notification_material_dismiss_bgstyle";
+
         /**
          * Force full screen for devices with cutout
          * @hide
