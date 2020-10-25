@@ -165,9 +165,10 @@ interface IStatusBarService
     void startAssist(in Bundle args);
 
     /**
-     * Evolution X additions
+     * Arcana additions
      */
     void toggleCameraFlash();
+    void screenPinningStateChanged(boolean enabled);
 
     /**
      * Used to block or unblock usage of gestural navigation
