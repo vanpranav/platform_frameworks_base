@@ -5667,6 +5667,20 @@ public final class Settings {
          */
         public static final String UDFPS_ICON = "udfps_icon";
         
+        /**
+         * reTicker Status
+         * @hide
+         */
+        @Readable
+        public static final String RETICKER_STATUS = "reticker_status";
+
+        /**
+         * reTicker Colored
+         * @hide
+         */
+        @Readable
+        public static final String RETICKER_COLORED = "reticker_colored";
+
        /**
          * Whether to enable the ripple animation on fingerprint unlock
          * @hide
