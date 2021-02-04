@@ -87,5 +87,9 @@ public class SystemSettings {
         Settings.System.FULLSCREEN_GESTURES,
         Settings.System.SHOW_FOURG_ICON,
         Settings.System.SCREEN_OFF_ANIMATION,
+        Settings.System.ARTWORK_MEDIA_BACKGROUND,
+        Settings.System.ARTWORK_MEDIA_BACKGROUND_ENABLE_BLUR,
+        Settings.System.ARTWORK_MEDIA_BACKGROUND_BLUR_RADIUS,
+        Settings.System.ARTWORK_MEDIA_BACKGROUND_ALPHA,
     };
 }
