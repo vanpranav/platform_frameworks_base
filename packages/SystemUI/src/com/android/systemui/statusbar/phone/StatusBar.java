@@ -282,6 +282,10 @@ public class StatusBar extends SystemUI implements
 
     private static final String NAVIGATION_BAR_SHOW =
             "customsystem:" + Settings.System.NAVIGATION_BAR_SHOW;
+    private static final String GAMING_MODE_ACTIVE =
+            "system:" + Settings.System.GAMING_MODE_ACTIVE;
+    private static final String GAMING_MODE_DISABLE_NOTIFICATION_ALERT =
+            "system:" + Settings.System.GAMING_MODE_DISABLE_NOTIFICATION_ALERT;
 
     private static final String BANNER_ACTION_CANCEL =
             "com.android.systemui.statusbar.banner_action_cancel";
@@ -963,6 +967,8 @@ public class StatusBar extends SystemUI implements
                 SysuiStatusBarStateController.RANK_STATUS_BAR);
 
         mTunerService.addTunable(this, NAVIGATION_BAR_SHOW);
+        mTunerService.addTunable(this, GAMING_MODE_ACTIVE);
+        mTunerService.addTunable(this, GAMING_MODE_DISABLE_NOTIFICATION_ALERT);
 
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         mDreamManager = IDreamManager.Stub.asInterface(
@@ -4288,25 +4294,43 @@ public class StatusBar extends SystemUI implements
         return navigationBarModeOverlay;
     }
 
-    @Override
+   @Override
     public void onTuningChanged(String key, String newValue) {
-        if (NAVIGATION_BAR_SHOW.equals(key) && mDisplayId == Display.DEFAULT_DISPLAY &&
-                mWindowManagerService != null) {
-            boolean navbarEnabled = NavbarUtils.isEnabled(mContext);
-            boolean hasNavbar = getNavigationBarView() != null;
-            if (navbarEnabled) {
-                if (!hasNavbar) {
-                    mNavigationBarController.onDisplayReady(mDisplayId);
-                    setNavBarInteractionMode(getOldNavBarModeOverlay());
+        switch (key) {
+            case NAVIGATION_BAR_SHOW:
+                if (mDisplayId != Display.DEFAULT_DISPLAY ||
+                        mWindowManagerService == null)
+                    return;
+                boolean mNavbarVisible =
+                        TunerService.parseIntegerSwitch(newValue, NavbarUtils.hasNavbarByDefault(mContext));
+                boolean hasNavbar = getNavigationBarView() != null;
+                if (mNavbarVisible) {
+                    if (!hasNavbar) {
+                        mNavigationBarController.onDisplayReady(mDisplayId);
+                    }
+                } else {
+                    if (hasNavbar) {
+                        mNavigationBarController.onDisplayRemoved(mDisplayId);
+                    }
                 }
-            } else {
-                saveNavBarCurrentModeOverlay();
-                setNavBarInteractionMode(NAV_BAR_MODE_3BUTTON_OVERLAY);
-                if (hasNavbar) {
-                    mNavigationBarController.onDisplayRemoved(mDisplayId);
+                break;
+            case GAMING_MODE_ACTIVE:
+                boolean gamingModeActive =
+                        TunerService.parseIntegerSwitch(newValue, false);
+                if (mPresenter != null) {
+                    mPresenter.setGamingModeActive(gamingModeActive);
                 }
-            }
-        }
+                break;
+            case GAMING_MODE_DISABLE_NOTIFICATION_ALERT:
+                boolean gamingModeNoAlert =
+                        TunerService.parseIntegerSwitch(newValue, true);
+                if (mPresenter != null) {
+                    mPresenter.setGamingModeNoAlert(gamingModeNoAlert);
+                }
+                break;
+            default:
+                break;
+         }
     }
     // End Extra BaseStatusBarMethods.
 

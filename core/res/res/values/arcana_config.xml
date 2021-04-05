@@ -22,4 +22,7 @@
         <item>restart</item>
         <item>logout</item>
     </string-array>
+    
+    <!-- Whether device supports an gaming mode profiles -->
+    <bool name="config_gamingmode_performance">false</bool>
 </resources>

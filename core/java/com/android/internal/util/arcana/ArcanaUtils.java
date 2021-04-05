@@ -26,6 +26,10 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.input.InputManager;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+
+import com.android.internal.statusbar.IStatusBarService;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
