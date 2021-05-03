@@ -4,19 +4,6 @@
     <string-array name="config_vendorPlatformSignatures">
     </string-array>
 
-    <!-- The list of components which should be automatically disabled for a specific device.
-         Note: this MUST not be used to randomly disable components, ask for approval first! -->
-    <string-array name="config_deviceDisabledComponents" translatable="false">
-    </string-array>
-
-    <!-- The list of components which should be automatically disabled for all devices. -->
-    <string-array name="config_globallyDisabledComponents" translatable="false">
-    </string-array>
-
-    <!-- The list of components which should be forced to be enabled. -->
-    <string-array name="config_forceEnabledComponents" translatable="false">
-    </string-array>
-
     <!-- Paths to the libraries that contain device specific key handlers -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
         <item>/system/system_ext/priv-app/TouchGestures/TouchGestures.apk</item>
@@ -26,9 +13,6 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
-
-    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
-    <bool name="config_cleanupUnusedFingerprints">true</bool>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">@bool/config_intrusiveNotificationLed</bool>
@@ -85,6 +69,12 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+    <!-- Control the behavior when the user long presses the back button.
+         This needs to match the enums in
+         frameworks/base/core/java/com/android/internal/util/custom/hwkeys/DeviceKeysConstants.java.
+    -->
+    <integer name="config_longPressOnBackBehavior">0</integer>
 
     <!-- Control the behavior when the user long presses the home button.
          This needs to match the enums in
