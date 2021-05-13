@@ -107,5 +107,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_PULSE_DURATION,
         Settings.System.USE_OLD_MOBILETYPE,
         Settings.System.VOLUME_PANEL_ON_LEFT,
+        Settings.System.AUTO_BRIGHTNESS_ONE_SHOT,
     };
 }
