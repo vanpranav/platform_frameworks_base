@@ -118,8 +118,10 @@ android_library {
         "monet",
         "dagger2",
         "jsr330",
-        "lottie",,
+        "lottie",
         "faceunlock_framework",
+        "colorkt",
+        "themelib",
     ],
     manifest: "AndroidManifest.xml",
 
