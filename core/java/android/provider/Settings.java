@@ -5674,6 +5674,12 @@ public final class Settings {
         public static final String ENABLE_RIPPLE_EFFECT = "enable_ripple_effect";
 
         /**
+         * Whether StatusBar icons should use app icon
+         * @hide
+         */
+        public static final String STATUSBAR_COLORED_ICONS = "statusbar_colored_icons";
+
+        /**
          * These are all public system settings
          *
          * @hide
