@@ -5531,6 +5531,12 @@ public final class Settings {
          * @hide
          */
         public static final String DATA_DISABLED_ICON = "data_disabled_icon";
+
+        /**
+         * Whether to Enable wp zoom
+         * @hide
+         */
+        public static final String USE_WP_ZOOM = "use_wp_zoom";
         
         /**
          * Keys we no longer back up under the current schema, but want to continue to
