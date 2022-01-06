@@ -5760,7 +5760,7 @@ public final class Settings {
          * @hide
          */
         public static final String DOZE_ON_CHARGE = "doze_on_charge";
-        
+
         /**
          * Whether to enable PULSE Edge lights
          * @hide
@@ -11012,6 +11012,25 @@ public final class Settings {
          * @hide
          */
         public static final String ENABLE_CAMERA_PRIVACY_INDICATOR = "enable_camera_privacy_indicator";
+        
+        /**
+         * Whether to show the brightness slider in quick settings panel.
+         * @hide
+         */
+        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+
+        /**
+         * Whether to show the brightness slider in quick settings panel.
+         * 0 = Top, 1 = Bottom
+         * @hide
+         */
+        public static final String QS_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
+
+        /**
+         * Whether to show the auto brightness icon in quick settings panel.
+         * @hide
+         */
+        public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
