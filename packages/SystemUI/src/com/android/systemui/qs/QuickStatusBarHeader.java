@@ -351,7 +351,6 @@ public class QuickStatusBarHeader extends FrameLayout implements TunerService.Tu
                 .getDimensionPixelSize(R.dimen.qqs_layout_margin_top) : qsOffsetHeight;
         mHeaderQsPanel.setLayoutParams(qqsLP);
 
-        updateBatteryMode();
         updateHeadersPadding();
         updateAnimators();
 
@@ -538,7 +537,6 @@ public class QuickStatusBarHeader extends FrameLayout implements TunerService.Tu
         mCutOutPaddingRight = sbInsets.second;
         mWaterfallTopInset = cutout == null ? 0 : cutout.getWaterfallInsets().top;
 
-        updateBatteryMode();
         updateHeadersPadding();
         return super.onApplyWindowInsets(insets);
     }
