@@ -121,7 +121,7 @@ class FPSInfoTile @Inject constructor(
         refreshState()
     }
 
-    override fun getMetricsCategory(): Int = MetricsEvent.EVO_QS_TILES
+    override fun getMetricsCategory(): Int = MetricsEvent.ARCANA
 
     private fun toggleState() {
         logD("toggleState")
