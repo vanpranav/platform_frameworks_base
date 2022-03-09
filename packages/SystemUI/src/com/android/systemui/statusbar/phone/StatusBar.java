@@ -446,6 +446,11 @@ public class StatusBar extends SystemUI implements
     }
 
     /** */
+    public void toggleCameraFlash() {
+        mCommandQueueCallbacks.toggleCameraFlash();
+    }
+
+    /** */
     public void animateCollapsePanels(int flags, boolean force) {
         mCommandQueueCallbacks.animateCollapsePanels(flags, force);
     }
@@ -2033,15 +2038,6 @@ public class StatusBar extends SystemUI implements
                     "com.android.systemui:full_screen_intent");
             mWakeUpComingFromTouch = false;
             mWakeUpTouchLocation = null;
-        }
-    }
-
-    public void toggleCameraFlash() {
-        if (mFlashlightController != null) {
-            mFlashlightController.initFlashLight();
-            if (mFlashlightController.hasFlashlight() && mFlashlightController.isAvailable()) {
-                mFlashlightController.setFlashlight(!mFlashlightController.isEnabled());
-            }
         }
     }
 
