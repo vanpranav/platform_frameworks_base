@@ -1,24 +1,5 @@
-<!--
-Copyright (C) 2015 The Android Open Source Project
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="24dp"
-        android:height="24dp"
-        android:viewportWidth="24.0"
-        android:viewportHeight="24.0">
-    <path
-        android:fillColor="#FFDB4437"
-        android:pathData="M21 19V5c0,-1.1,-.9,-2,-2,-2H5c-1.1 0,-2 .9,-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2,-.9 2,-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5,-4.5z"/>
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:pathData="M21 5c0-.53-.211-1.039-.586-1.414S19.53 3 19 3H5c-.53 0-1.039.211-1.414.586S3   4.47 3 5v14c0 .53.211 1.039.586 1.414S4.47 21 5 21h14c.53 0 1.039-.211 1.414-.586S21   19.53 21 19V5z  M14.412 7.587c.45-.449 1.18-.449 1.63   0 .449.45.449 1.179 0 1.63-.45.449-1.18.449-1.63   0-.45-.451-.45-1.18 0-1.63zm2.212 9.163l-1.865-2.517-1.849   2.486-2.764-3.448-2.711 3.402" android:strokeColor="#de000000" android:strokeWidth="1.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
 </vector>
