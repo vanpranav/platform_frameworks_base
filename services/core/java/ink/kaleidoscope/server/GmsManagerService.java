@@ -58,6 +58,13 @@ public final class GmsManagerService extends SystemService {
         "com.google.android.gms.policy_sidecar_aps",
         "com.google.android.gsf",
         "com.google.android.syncadapters.calendar",
+        "com.google.android.location.geocode.GeocodeService",
+        "com.google.android.location.reporting.service.ReportingAndroidService",
+        "com.google.android.location.geofencer.service.GeofenceProviderService",
+        "com.google.android.gms.tron.CollectionService",
+        ".lockbox.service.LockboxBrokerService",
+        ".usagereporting.service.UsageReportingService",
+        "com.google.android.location.places.service.PlaceDetectionAsyncService",
         "com.google.android.syncadapters.contacts"
     };
 
