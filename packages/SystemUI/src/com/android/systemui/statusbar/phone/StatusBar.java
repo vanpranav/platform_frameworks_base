@@ -205,6 +205,7 @@ import com.android.systemui.statusbar.PowerButtonReveal;
 import com.android.systemui.statusbar.PulseExpansionHandler;
 import com.android.systemui.statusbar.StatusBarState;
 import com.android.systemui.statusbar.SysuiStatusBarStateController;
+import com.android.systemui.statusbar.charging.WiredChargingRippleController;
 import com.android.systemui.statusbar.connectivity.NetworkController;
 import com.android.systemui.statusbar.events.SystemStatusAnimationScheduler;
 import com.android.systemui.statusbar.notification.DynamicPrivacyController;
@@ -711,6 +712,7 @@ public class StatusBar extends SystemUI implements
     private final ColorExtractor.OnColorsChangedListener mOnColorsChangedListener =
             (extractor, which) -> updateTheme();
 
+    private final WiredChargingRippleController mWiredChargingRippleController;
 
     /**
      * Public constructor for StatusBar.
@@ -821,7 +823,8 @@ public class StatusBar extends SystemUI implements
             Optional<StartingSurface> startingSurfaceOptional,
             TunerService tunerService,
             DumpManager dumpManager,
-            ActivityLaunchAnimator activityLaunchAnimator) {
+            ActivityLaunchAnimator activityLaunchAnimator,
+            WiredChargingRippleController wiredChargingRippleController) {
         super(context);
         mNotificationsController = notificationsController;
         mFragmentService = fragmentService;
@@ -921,6 +924,7 @@ public class StatusBar extends SystemUI implements
 
         mLockscreenShadeTransitionController = lockscreenShadeTransitionController;
         mStartingSurfaceOptional = startingSurfaceOptional;
+        mWiredChargingRippleController = wiredChargingRippleController;
         lockscreenShadeTransitionController.setStatusbar(this);
 
         mPanelExpansionStateManager.addExpansionListener(this::onPanelExpansionChanged);
