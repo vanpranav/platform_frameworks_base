@@ -5557,6 +5557,12 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
+         * Settings Dashboard Style
+         * @hide
+         */
+        public static final String SETTINGS_DASHBOARD_GMS = "settings_dashboard_gms";
+
+        /**
          * These are all public system settings
          *
          * @hide
