@@ -65,7 +65,12 @@ public final class GmsManagerService extends SystemService {
         ".lockbox.service.LockboxBrokerService",
         ".usagereporting.service.UsageReportingService",
         "com.google.android.location.places.service.PlaceDetectionAsyncService",
-        "com.google.android.syncadapters.contacts"
+        "com.google.android.syncadapters.contacts",
+        "com.google.android.googlequicksearchbox",
+        "com.google.android.projection.gearhead",
+        "com.google.ar.core",
+        "com.google.android.apps.tachyon",
+        "com.google.android.gms.location.history"
     };
 
     private static final String TAG = "GmsManagerService";
