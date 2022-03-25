@@ -5575,12 +5575,6 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
-         * Settings Dashboard Style
-         * @hide
-         */
-        public static final String SETTINGS_DASHBOARD_GMS = "settings_dashboard_gms";
-
-        /**
          * Whether to show the clock in the right or left position or show it in the center
          * 0: show the clock in the right position (LTR)
          * 1: show the clock in the center
@@ -5601,11 +5595,10 @@ public final class Settings {
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
         /**
-         * Whether to hide clock when launcher is visible
-         * default: false
+         * Settings Dashboard Style
          * @hide
          */
-        public static final String STATUS_BAR_CLOCK_AUTO_HIDE = "status_bar_clock_auto_hide";
+        public static final String SETTINGS_DASHBOARD_GMS = "settings_dashboard_gms";
 
         /**
          * Whether to show seconds next to clock in status bar
