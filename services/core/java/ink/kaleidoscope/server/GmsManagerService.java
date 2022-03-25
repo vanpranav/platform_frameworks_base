@@ -53,10 +53,6 @@ public final class GmsManagerService extends SystemService {
 
     private static final String[] GMS_PACKAGES =
     {
-        "com.android.vending",
-        "com.google.android.gms",
-        "com.google.android.gms.policy_sidecar_aps",
-        "com.google.android.gsf",
         "com.google.android.syncadapters.calendar",
         "com.google.android.location.geocode.GeocodeService",
         "com.google.android.location.reporting.service.ReportingAndroidService",
