@@ -66,6 +66,12 @@ public final class GmsManagerService extends SystemService {
         "com.google.android.projection.gearhead",
         "com.google.ar.core",
         "com.google.android.apps.tachyon",
+        "com.google.android.apps.safetyhub",
+        "com.google.android.apps.photos",
+        "com.google.android.apps.maps",
+        "com.android.hotwordenrollment.okgoogle",
+        "com.android.hotwordenrollment.xgoogle",
+        "com.google.android.gm",
         "com.google.android.gms.location.history"
     };
 
