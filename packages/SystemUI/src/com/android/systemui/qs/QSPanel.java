@@ -357,6 +357,9 @@ public class QSPanel extends LinearLayout {
         boolean move = false;
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
+            if (child == null) {
+                continue;
+            }
             if (move) {
                 int top = mChildrenLayoutTop.get(child);
                 child.setLeftTopRightBottom(child.getLeft(), top + tileHeightOffset,
