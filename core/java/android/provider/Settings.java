@@ -11181,26 +11181,6 @@ public final class Settings {
          * @hide
          */
         public static final String GESTURE_NAVBAR_LENGTH_MODE = "gesture_navbar_length_mode";
-        
-        /**
-         * Whether to show QS brightness slider
-         * @hide
-         */
-        @Readable
-        public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
-
-        /**
-         * Whether to show QS brightness slider below the tiles
-         * @hide
-         */
-        @Readable
-        public static final String QS_BRIGHTNESS_POSITION_BOTTOM = "qs_brightness_position_bottom";
-
-        /**
-         * Whether to show QS auto brightness toggle button
-         * @hide
-         */
-        public static final String QS_SHOW_AUTO_BRIGHTNESS_BUTTON = "qs_show_auto_brightness_button";
 
         /**
          * Accurate shades (default 1)
