@@ -42,7 +42,6 @@ import androidx.recyclerview.widget.RecyclerView.State;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.android.internal.logging.UiEventLogger;
-import com.android.internal.util.arcana.ArcanaUtils;
 import com.android.systemui.R;
 import com.android.systemui.qs.QSEditEvent;
 import com.android.systemui.qs.QSTileHost;
@@ -122,7 +121,6 @@ public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileSta
         mMinNumTiles = context.getResources().getInteger(R.integer.quick_settings_min_num_tiles);
         mNumColumns = context.getResources().getInteger(NUM_COLUMNS_ID);
         //mAccessibilityDelegate = new TileAdapterDelegate();
-        mNumColumns = ArcanaUtils.getQSColumnsCount(mContext, mNumColumns);
         mSizeLookup.setSpanIndexCacheEnabled(true);
     }
 
@@ -143,7 +141,6 @@ public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileSta
      */
     public boolean updateNumColumns() {
         int numColumns = mContext.getResources().getInteger(NUM_COLUMNS_ID);
-        numColumns = ArcanaUtils.getQSColumnsCount(mContext, numColumns);
         if (numColumns != mNumColumns) {
             mNumColumns = numColumns;
             return true;

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.internal.logging.UiEventLogger;
-import com.android.internal.util.arcana.ArcanaUtils;
 import com.android.systemui.R;
 import com.android.systemui.qs.QSPanel.QSTileLayout;
 import com.android.systemui.qs.QSPanelControllerBase.TileRecord;
@@ -118,12 +117,14 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     }
 
     public boolean updateResources() {
-        final Resources res = getResources();
-        mMaxCellHeight = res.getDimensionPixelSize(mCellHeightResId);
+        final Resources res = mContext.getResources();
+        mResourceColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
+        updateColumns();
+        mMaxCellHeight = mContext.getResources().getDimensionPixelSize(mCellHeightResId);
         mCellMarginHorizontal = res.getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal);
         mSidePadding = useSidePadding() ? mCellMarginHorizontal / 2 : 0;
         mCellMarginVertical= res.getDimensionPixelSize(R.dimen.qs_tile_margin_vertical);
-        mMaxAllowedRows = Math.max(1, res.getInteger(R.integer.quick_settings_max_rows));
+        mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         if (mLessRows) mMaxAllowedRows = Math.max(mMinRows, mMaxAllowedRows - 1);
         if (updateColumns()) {
             requestLayout();
@@ -138,7 +139,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     private boolean updateColumns() {
         int oldColumns = mColumns;
-        mColumns = Math.min(getResourceColumns(), mMaxColumns);
+        mColumns = Math.min(mResourceColumns, mMaxColumns);
         return oldColumns != mColumns;
     }
 
@@ -209,9 +210,6 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     }
 
     protected int getCellHeight() {
-        if (ArcanaUtils.getQSTileLabelHide(mContext)) {
-            return getResources().getDimensionPixelSize(R.dimen.qs_quick_tile_size);
-        }
         return mMaxCellHeight;
     }
 
@@ -298,17 +296,5 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
                 ((HeightOverrideable) record.tileView).setSquishinessFraction(mSquishinessFraction);
             }
         }
-    }
-
-    @Override
-    public int getResourceColumns() {
-        int resourceColumns = Math.max(2, getResources().getInteger(R.integer.quick_settings_num_columns));
-        return ArcanaUtils.getQSColumnsCount(mContext, resourceColumns);
-    }
-
-    @Override
-    public void updateSettings() {
-        setMaxColumns(getResourceColumns());
-        requestLayout();
     }
 }
