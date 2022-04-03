@@ -73,6 +73,11 @@ public final class GmsManagerService extends SystemService {
         "com.android.hotwordenrollment.xgoogle",
         "com.google.android.gm",
         "com.google.android.projection.gearhead",
+        "com.google.android.calendar",
+        "com.google.android.calculator",
+        "com.google.android.deskclock",
+        "com.google.android.as.oss",
+        "com.android.chrome",
         "com.google.android.gms.location.history"
     };
 
