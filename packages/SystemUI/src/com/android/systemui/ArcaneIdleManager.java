@@ -112,15 +112,13 @@ public class ArcaneIdleManager {
         RunningServices = localActivityManager.getRunningAppProcesses();
         for (int i=0; i < RunningServices.size(); i++) {
           if (!RunningServices.get(i).pkgList[0].toString().contains("com.android.") &&
-                !RunningServices.get(i).pkgList[0].toString().equals("android") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("google") &&
-                !RunningServices.get(i).pkgList[0].toString().equals("google") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("instagram") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("facebook") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("zhihu") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("ugc") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("GoogleCamera") &&
-                !RunningServices.get(i).pkgList[0].toString().contains("settings") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("com.google.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("com.mgoogle.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("com.facebook.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("com.vanced.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("zhihu.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("ugc.") &&
+                !RunningServices.get(i).pkgList[0].toString().contains("GoogleCamera.") &&
                 !RunningServices.get(i).pkgList[0].toString().contains("ims")) {
                     localActivityManager.killBackgroundProcesses(RunningServices.get(i).pkgList[0].toString());
             }
