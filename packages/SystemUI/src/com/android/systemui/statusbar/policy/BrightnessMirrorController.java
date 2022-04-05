@@ -224,6 +224,9 @@ public class BrightnessMirrorController
             iv.setImageResource(isAutomatic
                     ? com.android.systemui.R.drawable.ic_qs_brightness_auto_on_new
                     : com.android.systemui.R.drawable.ic_qs_brightness_auto_off_new);
+            iv.setBackgroundResource(isAutomatic
+                    ? com.android.systemui.R.drawable.bg_qs_brightness_auto_on
+                    : com.android.systemui.R.drawable.bg_qs_brightness_auto_off);
             iv.setVisibility(View.VISIBLE);
         } else {
             iv.setVisibility(View.GONE);
