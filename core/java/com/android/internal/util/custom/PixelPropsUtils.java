@@ -85,6 +85,13 @@ public class PixelPropsUtils {
         "com.google.android.apps.youtube.music"
     };
 
+    private static final String[] streamingPackagesToChange = {
+            "com.amazon.avod.thirdpartyclient",
+            "com.disney.disneyplus",
+            "com.netflix.mediaclient",
+            "in.startv.hotstar"
+    };
+
     private static final String[] packagesToChangeROG1 = {
             "com.dts.freefireth",
             "com.dts.freefiremax",
@@ -183,7 +190,8 @@ public class PixelPropsUtils {
             return;
         }
         if (packageName.startsWith("com.google.")
-                || Arrays.asList(extraPackagesToChange).contains(packageName)) {
+                || Arrays.asList(extraPackagesToChange).contains(packageName)
+                || Arrays.asList(streamingPackagesToChange).contains(packageName)) {
 
             boolean isPixelDevice = Arrays.asList(pixelCodenames).contains(SystemProperties.get(DEVICE));
 
